@@ -32,9 +32,9 @@ The final OLS model, run on the log-adstock-saturated features, yielded strong p
 
 | Metric | Result | Interpretation |
 | :--- | :--- | :--- |
-| **R-squared** | **$0.731$** | $73.1\%$ of the variance in sales is explained by marketing spend features. |
-| **Condition Number** | **$461$** | Confirms high model stability (after fixing multicollinearity). |
-| **P-Value (F-stat)** | **$0.000$** | The model is statistically significant. |
+| **R-squared** | **0.731** | 73.1% of the variance in sales is explained by marketing spend features. |
+| **Condition Number** | **461** | Confirms high model stability (after fixing multicollinearity). |
+| **P-Value (F-stat)** | **0.000** | The model is statistically significant. |
 
 ### Model Fit Visualization
 
