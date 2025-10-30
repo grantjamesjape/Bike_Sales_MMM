@@ -2,10 +2,20 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
+
+# define standard folder names
+DATA_DIR = 'data'
+CHARTS_DIR = 'charts'
+
+# ensure the output directory exists before saving (critical for running scripts)
+os.makedirs(CHARTS_DIR, exist_ok=True)
 
 # load data
-df = pd.read_csv(r"data\bike_sales_data.csv")
-df.head()
+data_path = os.path.join(DATA_DIR, 'bike_sales_data.csv')
+df = pd.read_csv(data_path) 
+print("Data loaded successfully.")
+print(df.head())
 
 # identify marketing spend columns
 spend_cols = [col for col in df.columns if 'spend' in col]
@@ -25,6 +35,6 @@ sns.heatmap(
 plt.title('Correlation Matrix of Marketing Spend Channels (Multicollinearity Check)')
 plt.xticks(rotation=45, ha='right')
 plt.tight_layout()
-plt.savefig('charts\spend_correlation_matrix.png')
-print("Saved: spend_correlation_matrix.png to showcase multicollinearity.")
-plt.show()
+
+output_path = os.path.join(CHARTS_DIR, 'spend_correlation_matrix.png')
+plt.savefig(output_path)
