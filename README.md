@@ -75,3 +75,16 @@ The most crucial output is the **Sales Sensitivity Coefficient**, which dictates
 ## 4. Automation and Reproducibility
 
 ### Repository Structure
+MMM-Portfolio-Project/ ├── data/ (Input Data) ├── charts/ <-- Generated Visualizations (PNGs) ├── reports/ <-- Final CSV Output ├── .github/workflows/ │ └── main_analysis.yml <-- GitHub Action Workflow └── run_analysis.py <-- Complete Analysis Script
+
+### Execution Flow
+The entire analysis is automated using **GitHub Actions**.
+
+1.  The workflow is triggered by a code push to the `main` branch.
+2.  The workflow executes the single script, `run_analysis.py`.
+3.  The generated output files (`.png` charts and `.csv` reports) are automatically committed back to the repository by the Action.
+
+To run the analysis locally, simply execute the main script from the root directory:
+
+```bash
+python run_analysis.py
